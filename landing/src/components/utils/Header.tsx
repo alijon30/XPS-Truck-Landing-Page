@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import xpsLogoWhite from '../../assets/trucks/xps_logo3.png';
 import xpsLogoOriginal from '../../assets/trucks/xps_logo.png';
-
+import SmoothScrollLink from './SmoothScrollLink';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -47,6 +47,11 @@ const Header = () => {
         behavior: 'smooth'
       });
     }
+  };
+
+  const handleSmoothScrollAndCloseMenu = (e: React.MouseEvent<HTMLAnchorElement>): void => {
+    // Close the mobile menu
+    setMenuOpen(false);
   };
 
   const navItems = [
@@ -95,7 +100,7 @@ const Header = () => {
           <ul className="md:flex md:items-center p-5 md:p-0">
             {navItems.map((item) => (
               <li key={item.id} className="mb-4 md:mb-0 md:mr-8">
-                <a 
+                <SmoothScrollLink
                   href={item.href}
                   className={`
                     text-gray-800 ${scrolled ? 'md:text-gray-800' : 'md:text-white'} 
@@ -109,7 +114,7 @@ const Header = () => {
                   onClick={(e) => handleNavClick(e, item.id)}
                 >
                   {item.name}
-                </a>
+                </SmoothScrollLink>
               </li>
             ))}
             <li className="md:hidden mb-4">
@@ -119,13 +124,13 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a 
+              <SmoothScrollLink 
                 href="#contact" 
                 className="bg-blue-700 hover:bg-blue-800 text-white py-2 px-6 rounded-lg font-medium transition duration-300 inline-block w-full md:w-auto text-center shadow-sm hover:shadow md:flex md:items-center md:gap-2"
-                onClick={(e) => handleNavClick(e, 'contact')}
+                onClick={handleSmoothScrollAndCloseMenu}
               >
                 Contact Us
-              </a>
+              </SmoothScrollLink>
             </li>
           </ul>
         </nav>
