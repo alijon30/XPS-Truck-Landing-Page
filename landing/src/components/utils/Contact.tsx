@@ -65,26 +65,6 @@ const Contact = () => {
             ))}
           </div>
         </div>
-          
-        {/* Clean CTA for contact form */}
-        <div className="bg-gray-50 border border-gray-200 p-6 rounded">
-          <div className="flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto">
-            <div className="mb-4 md:mb-0 md:mr-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-1">Need to send us a message?</h3>
-              <p className="text-sm text-gray-600">
-                Use our online form to contact us with your questions or request a quote.
-              </p>
-            </div>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfo9TCHuBUdutqjfajvoB-KbZsuzbOTMLaNbK9GOioBoIV06A/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whitespace-nowrap px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded border border-blue-700 hover:bg-blue-700 transition-colors duration-200"
-            >
-              Contact Form <ExternalLink size={14} className="inline ml-1" />
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
